@@ -12,10 +12,10 @@ Currently, these are the matchers that exist in mlir query:
 "hasOpName",          hasOpName(opName)           // Matches all operations with the given opName
 ```
 
-To extract all the definitions of the operation `test.use_coo`, we can do:
+To extract all the definitions of the operation `test.use_coo` upto 2 hops away (into a function), we can do:
 
 ```bash
-$ mlir-query test.mlir
+$ mlir-query test1.mlir
 mlir-query> m getAllDefinitions(hasOpName("test.use_coo"), 2).extract()
 ```
 
